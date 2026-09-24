@@ -30,7 +30,7 @@
     width: 125%;
     height: 50;
     background-color: #111; /* Negro grisáceo */
-    border: 1px solid #333; /* Borde sutil */
+    border: 1px solid #333; 
     color: white;
     padding: 12px;
     margin-bottom: 15px;
@@ -43,13 +43,11 @@
     resize: none; 
 }
 
-/* Efecto al hacer clic en las cajas */
 .caja-input:focus {
     outline: none;
     border-color: #00ffcc; /* Color neón que ya usamos */
 }
 
-/* Botón de enviar */
 .boton-enviar {
     background-color: #00ffcc;
     color: black;

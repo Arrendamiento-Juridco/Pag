@@ -10,7 +10,6 @@ body {
     background-color: #33000;
     color: white;
     font-family: Arial, sans-serif;
-    /* Aumentamos el padding para que el contenido empiece debajo de la navbar */
     padding-top: 160px; 
 }
 
@@ -19,7 +18,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: black; /* Asegúrate que tenga fondo para que no se transparente el texto al bajar */
+    background-color: black; 
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -33,11 +32,9 @@ body {
     height: 100px;
     width: auto;
     display: block;
-    /* REDUCIMOS el margin-right que tenías (era 100px, es mucho) */
     margin-right: 40px; 
     
-    /* AÑADIMOS esto para moverlo a la izquierda */
-    margin-left: -120px; /* Prueba con -20px, -50px o -100px hasta que te guste */
+    margin-left:-250px;
     
     transition: transform 0.3s;
 }
@@ -104,8 +101,8 @@ body {
 }
 
 .icono-redes:hover {
-    transform: scale(1.2); /* Crece un poquito al pasar el mouse */
-    filter: brightness(1) invert(0); /* Opcional: vuelve a su color original al hover */
+    transform: scale(1.2); 
+    filter: brightness(1) invert(0); 
 }
 
 .copyright {
