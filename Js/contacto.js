@@ -3,12 +3,12 @@ const estado = document.getElementById('estado-envio');
 const btn = document.getElementById('btn-enviar');
 
 form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita que se recargue la página o dé error 405
+    e.preventDefault();
 
     btn.textContent = 'Enviando...';
     btn.disabled = true;
+    estado.style.display = 'none';
 
-    // Lee los valores que escribió el usuario
     const datos = {
         Email: document.getElementById('email').value,
         Asunto: document.getElementById('asunto').value,
@@ -25,14 +25,22 @@ form.addEventListener('submit', function(e) {
     })
     .then(response => response.json())
     .then(data => {
-        estado.textContent = "¡Mensaje enviado con éxito!";
-        estado.style.color = "#00ffcc";
+        console.log("Respuesta de FormSubmit:", data);
+
+        if (data.success === "false" || data.message?.includes("activate")) {
+            estado.textContent = "Por favor revisa 'juridicoa695@gmail.com' (incluyendo Spam) y dale clic a 'Activate Form'.";
+            estado.style.color = "yellow";
+        } else {
+            estado.textContent = "¡Mensaje enviado con éxito!";
+            estado.style.color = "#00ffcc";
+            form.reset();
+        }
         estado.style.display = "block";
-        form.reset(); // Limpia los campos
         btn.textContent = 'Enviar Mensaje';
         btn.disabled = false;
     })
     .catch(error => {
+        console.error("Error:", error);
         estado.textContent = "Ocurrió un error al enviar el mensaje.";
         estado.style.color = "red";
         estado.style.display = "block";
