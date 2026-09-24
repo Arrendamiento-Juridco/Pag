@@ -100,7 +100,9 @@ body {
         gap: 30px;
     }
 
-    .contenedor-mapa, 
+    .contenedor-mapa {
+        margin-top: 40px; 
+    } 
     .formulario-contacto {
         max-width: 100%;
     }
