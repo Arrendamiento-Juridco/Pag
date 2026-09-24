@@ -12,23 +12,17 @@ body {
     overflow-x: hidden;
 }
 
-/* =======================================================
-   1. ARREGLO: Espacio arriba para que el mapa baje
-   ======================================================= */
 .seccion-contacto {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     
-    /* 1. SEPARACIÓN ENTRE ELLOS: subió de 50px a 90px */
-    gap: 150px; 
+    gap: 50px; 
 
-    /* Ancho máximo aumentado para que quepan holgados con la nueva separación */
     max-width: 1300px; 
 
-    /* 2. BAJAR AMBOS: El primer número (160px) los baja de la pantalla */
-    /* (160px arriba, centrado a los lados, 50px abajo) */
+
     margin: 160px auto 50px auto; 
 
     padding: 20px;
@@ -41,28 +35,23 @@ body {
     width: 100%;
 }
 
-/* =======================================================
-   2. ARREGLO: Evitar que los campos de texto se encimen
-   ======================================================= */
+
 .formulario-contacto {
     flex: 1;
     max-width: 550px;
     width: 100%;
-    /* OBLIGATORIO: Ordena los campos uno debajo del otro con espacio entre sí */
     display: flex;
     flex-direction: column;
     gap: 15px; 
 }
 
-/* Título del formulario */
 .formulario-contacto h2 {
     margin-top: 0;
     margin-bottom: 10px;
 }
 
-/* Cajas de texto (inputs) */
 .caja-input {
-    display: block; /* Fuerza a que cada caja ocupe su propio renglón */
+    display: block; 
     width: 100%;
     background-color: #111; 
     border: 1px solid #333; 
@@ -75,7 +64,7 @@ body {
 
 .area-texto {
     min-height: 130px;
-    resize: vertical; /* Permite estirarlo hacia abajo si se desea */
+    resize: vertical; 
 }
 
 .caja-input:focus {
@@ -94,7 +83,7 @@ body {
     border-radius: 5px;
     font-size: 16px;
     transition: 0.3s;
-    align-self: flex-start; /* En PC el botón tiene tamaño natural */
+    align-self: flex-start; 
 }
 
 .boton-enviar:hover {
@@ -102,13 +91,11 @@ body {
     transform: translateY(-2px);
 }
 
-/* =======================================================
-   VISTA CELULAR
-   ======================================================= */
+
 @media (max-width: 768px) {
     .seccion-contacto {
         flex-direction: column;
-        margin-top: 80px; /* Separación prudente del menú en celulares */
+        margin-top: 80px; 
         padding: 15px;
         gap: 30px;
     }
@@ -123,7 +110,7 @@ body {
     }
 
     .boton-enviar {
-        width: 100%; /* En celular el botón ocupa todo el ancho */
+        width: 100%; 
         align-self: stretch;
     }
 }
