@@ -1,0 +1,37 @@
+/* index.css */
+
+body {
+    background-color: #2B0C08;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    text-align: left;
+    margin: 120px auto 50px; /* 120px arriba para no chocar con la nav, auto a los lados para centrar */
+    padding: 20px; 
+    max-width: 600px; 
+}
+
+.sub {
+    text-align: center;
+}  
+
+.contenedor-imagen {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 20px;
+}
+
+.imagen-estilizada {
+    max-width: 100%;
+    width: 100%; /* Que ocupe el ancho del "cubito" */
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.imagen-estilizada:hover {
+    transform: scale(1.02);
+}

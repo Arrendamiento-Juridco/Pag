@@ -1,0 +1,67 @@
+  body {
+            margin: 0;
+            padding: 0;
+            background-color: #2B0C08; 
+            color: white;          
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;    
+            height: 100vh;         
+        }
+
+.seccion-contacto {
+    display: flex;
+    flex-wrap: wrap;    
+    gap: 450px;          
+    max-width: 900px;   
+    margin: 50px auto; 
+    padding: 20px;
+}
+
+.contenedor-mapa, .formulario-contacto {
+    flex: 1;            
+    min-width: 300px; 
+    margin-left: -200px;
+}
+
+.caja-input {
+    width: 125%;
+    height: 50;
+    background-color: #111; /* Negro grisáceo */
+    border: 1px solid #333; /* Borde sutil */
+    color: white;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.area-texto {
+    height: 120px;
+    resize: none; 
+}
+
+/* Efecto al hacer clic en las cajas */
+.caja-input:focus {
+    outline: none;
+    border-color: #00ffcc; /* Color neón que ya usamos */
+}
+
+/* Botón de enviar */
+.boton-enviar {
+    background-color: #00ffcc;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.boton-enviar:hover {
+    background-color: white;
+    transform: translateY(-2px);
+}
