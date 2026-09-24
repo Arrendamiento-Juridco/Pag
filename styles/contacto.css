@@ -63,3 +63,19 @@
     background-color: white;
     transform: translateY(-2px);
 }
+@media (max-width: 768px) {
+    .seccion-contacto {
+        flex-direction: column; /* En celular se pone uno arriba del otro */
+        padding: 15px;
+        gap: 25px;
+    }
+
+    .contenedor-mapa iframe {
+        height: 280px; 
+    }
+
+    .boton-enviar {
+        width: 100%; 
+        padding: 14px;
+    }
+}
