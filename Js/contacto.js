@@ -1,4 +1,4 @@
-const form = document.getElementById('mi-formulario');
+const form = document.getElementById('formulario-contacto');
 const estado = document.getElementById('estado-envio');
 const btn = document.getElementById('btn-enviar');
 
@@ -15,7 +15,7 @@ form.addEventListener('submit', function(e) {
         Mensaje: document.getElementById('mensaje').value
     };
 
-    fetch("https://formsubmit.co/ajax/tucorreo@gmail.com", {
+    fetch("https://formsubmit.co/ajax/juridicoa695@gmail.com", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
