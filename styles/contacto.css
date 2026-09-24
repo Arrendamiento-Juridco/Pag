@@ -1,81 +1,129 @@
-  body {
-            margin: 0;
-            padding: 0;
-            background-color: #2B0C08; 
-            color: white;          
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center;    
-            height: 100vh;         
-        }
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2B0C08; 
+    color: white;          
+    font-family: Arial, sans-serif;
+    min-height: 100vh;   
+    overflow-x: hidden;
+}
+
+/* =======================================================
+   1. ARREGLO: Espacio arriba para que el mapa baje
+   ======================================================= */
 .seccion-contacto {
     display: flex;
-    flex-wrap: wrap;    
-    gap: 450px;          
-    max-width: 900px;   
-    margin: 50px auto; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    
+    /* 1. SEPARACIÓN ENTRE ELLOS: subió de 50px a 90px */
+    gap: 150px; 
+
+    /* Ancho máximo aumentado para que quepan holgados con la nueva separación */
+    max-width: 1300px; 
+
+    /* 2. BAJAR AMBOS: El primer número (160px) los baja de la pantalla */
+    /* (160px arriba, centrado a los lados, 50px abajo) */
+    margin: 160px auto 50px auto; 
+
     padding: 20px;
+    width: 100%;
 }
 
-.contenedor-mapa, .formulario-contacto {
-    flex: 1;            
-    min-width: 300px; 
-    margin-left: -200px;
+.contenedor-mapa {
+    flex: 1;
+    max-width: 550px;
+    width: 100%;
 }
 
+/* =======================================================
+   2. ARREGLO: Evitar que los campos de texto se encimen
+   ======================================================= */
+.formulario-contacto {
+    flex: 1;
+    max-width: 550px;
+    width: 100%;
+    /* OBLIGATORIO: Ordena los campos uno debajo del otro con espacio entre sí */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+/* Título del formulario */
+.formulario-contacto h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Cajas de texto (inputs) */
 .caja-input {
-    width: 125%;
-    height: 50;
-    background-color: #111; /* Negro grisáceo */
+    display: block; /* Fuerza a que cada caja ocupe su propio renglón */
+    width: 100%;
+    background-color: #111; 
     border: 1px solid #333; 
     color: white;
-    padding: 12px;
-    margin-bottom: 15px;
+    padding: 14px;
     border-radius: 5px;
     font-family: Arial, sans-serif;
+    font-size: 15px;
 }
 
 .area-texto {
-    height: 120px;
-    resize: none; 
+    min-height: 130px;
+    resize: vertical; /* Permite estirarlo hacia abajo si se desea */
 }
 
 .caja-input:focus {
     outline: none;
-    border-color: #00ffcc; /* Color neón que ya usamos */
+    border-color: #00ffcc; 
 }
 
+/* Botón de envío */
 .boton-enviar {
     background-color: #00ffcc;
     color: black;
     border: none;
-    padding: 12px 25px;
+    padding: 14px 28px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
     transition: 0.3s;
+    align-self: flex-start; /* En PC el botón tiene tamaño natural */
 }
 
 .boton-enviar:hover {
     background-color: white;
     transform: translateY(-2px);
 }
+
+/* =======================================================
+   VISTA CELULAR
+   ======================================================= */
 @media (max-width: 768px) {
     .seccion-contacto {
-        flex-direction: column; /* En celular se pone uno arriba del otro */
+        flex-direction: column;
+        margin-top: 80px; /* Separación prudente del menú en celulares */
         padding: 15px;
-        gap: 25px;
+        gap: 30px;
+    }
+
+    .contenedor-mapa, 
+    .formulario-contacto {
+        max-width: 100%;
     }
 
     .contenedor-mapa iframe {
-        height: 280px; 
+        height: 280px;
     }
 
     .boton-enviar {
-        width: 100%; 
-        padding: 14px;
+        width: 100%; /* En celular el botón ocupa todo el ancho */
+        align-self: stretch;
     }
 }
